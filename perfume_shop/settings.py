@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'shop'
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'perfume_shop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -115,14 +116,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 
 # This is where collectstatic will gather all static files
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')  # Only one directory here
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')  # Only one directory here?
 
 # Additional static directories (for your app-specific static files)
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'shop/static'),  # Replace 'your_app' with your actual app name
+    os.path.join(BASE_DIR, 'static/'),  # Replace 'your_app' with your actual app name
 ]
 
 
